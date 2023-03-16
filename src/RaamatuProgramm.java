@@ -71,10 +71,16 @@ public class RaamatuProgramm {
             if (tegevus == 4){
                 String juhuslikRaamat = null;
                 int nimekiri = JOptionPane.showOptionDialog(null, "Millisest nimekirjast soovite juhuslikult valida", "Andmete sisestamine", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, nimekirjad, nimekirjad[0]);
-                if (nimekiri == 0) juhuslikRaamat = lugeja.getHetkelLoen().valiSuvaline().getPealkiri();
-                else if (nimekiri == 1) juhuslikRaamat = lugeja.getLoetudRaamatud().valiSuvaline().getPealkiri();
-                else if (nimekiri == 2) juhuslikRaamat = lugeja.getTahanLugeda().valiSuvaline().getPealkiri();
-                JOptionPane.showMessageDialog(null, "Juhuslikult valitud teos on \"" + juhuslikRaamat + "\"");
+                if (nimekiri == 0) {
+                    if (lugeja.getHetkelLoen().raamatud.size() != 0)
+                    juhuslikRaamat = lugeja.getHetkelLoen().valiSuvaline().getPealkiri();}
+                else if (nimekiri == 1){
+                    if (lugeja.getLoetudRaamatud().raamatud.size() != 0)
+                    juhuslikRaamat = lugeja.getLoetudRaamatud().valiSuvaline().getPealkiri();}
+                else if (nimekiri == 2){
+                    if (lugeja.getTahanLugeda().raamatud.size() != 0)
+                    juhuslikRaamat = lugeja.getTahanLugeda().valiSuvaline().getPealkiri();}
+                JOptionPane.showMessageDialog(null, (juhuslikRaamat == null ? "List on tühi" : "Juhuslikult valitud raamat on" + juhuslikRaamat + "\""));
             }
 
             //kui valiti "Väljasta nimekirjad ja andmed"
