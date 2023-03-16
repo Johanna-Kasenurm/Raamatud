@@ -19,7 +19,7 @@ public class Lugeja {
     public void hakkanLugema(String pealkiri){
         for (Raamat raamat : tahanLugeda.raamatud) {
             if (raamat.getPealkiri().equals(pealkiri)) {
-                if (tahanLugeda.raamatud.contains(raamat)) tahanLugeda.eemaldaRaamat(raamat);
+                tahanLugeda.eemaldaRaamat(raamat);
             }
             hetkelLoen.lisaRaamat(raamat);
             break;
