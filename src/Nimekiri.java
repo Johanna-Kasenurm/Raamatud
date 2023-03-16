@@ -17,4 +17,8 @@ public class Nimekiri {
     protected void lisaRaamat(Raamat uus_raamat) {
         raamatud.add(uus_raamat);
     }
+
+    protected void eemaldaRaamat(Raamat raamat) {
+        raamatud.remove(raamat);
+    }
 }
