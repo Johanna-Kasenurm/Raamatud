@@ -16,20 +16,42 @@ public class Lugeja {
         hetkelLoen = loen;
     }
 
-    public void hakkanLugema(Raamat raamat){
-        if (tahanLugeda.raamatud.contains(raamat)) tahanLugeda.eemaldaRaamat(raamat);
-        hetkelLoen.lisaRaamat(raamat);
+    public void hakkanLugema(String pealkiri){
+        for (Raamat raamat : tahanLugeda.raamatud) {
+            if (raamat.getPealkiri().equals(pealkiri)) {
+                if (tahanLugeda.raamatud.contains(raamat)) tahanLugeda.eemaldaRaamat(raamat);
+            }
+            hetkelLoen.lisaRaamat(raamat);
+            break;
+        }
     }
 
-    public void lugesinLõpuni(Raamat raamat){
-        hetkelLoen.eemaldaRaamat(raamat);
-        String hinnang = "-1";
-        //Küsib kasutajalt hinnangut seni kuni kasutaja sisestab täisarvu vahemikus 1-5
-        while (Integer.parseInt(hinnang) < 0 || Integer.parseInt(hinnang) > 5)
-            hinnang = JOptionPane.showInputDialog(null, "Sisestage hinnang loetud raamatule (1-5) ", "Andmete sisestamine",
-                JOptionPane.QUESTION_MESSAGE);
-        raamat.setHinnang(Integer.parseInt(hinnang));
-        loetudRaamatud.lisaRaamat(raamat);
+    public void lugesinLõpuni(String pealkiri){
+        for (Raamat raamat : hetkelLoen.raamatud) {
+            if (raamat.getPealkiri().equals(pealkiri)) {
+                hetkelLoen.eemaldaRaamat(raamat);
+                String hinnang = "-1";
+                //Küsib kasutajalt hinnangut seni kuni kasutaja sisestab täisarvu vahemikus 1-5
+                while (Integer.parseInt(hinnang) < 0 || Integer.parseInt(hinnang) > 5)
+                    hinnang = JOptionPane.showInputDialog(null, "Sisestage hinnang loetud raamatule (1-5) ", "Andmete sisestamine",
+                            JOptionPane.QUESTION_MESSAGE);
+                raamat.setHinnang(Integer.parseInt(hinnang));
+                loetudRaamatud.lisaRaamat(raamat);
+                break;
+            }
+        }
+    }
+
+    public LoetudRaamatud getLoetudRaamatud() {
+        return loetudRaamatud;
+    }
+
+    public TahanLugeda getTahanLugeda() {
+        return tahanLugeda;
+    }
+
+    public HetkelLoen getHetkelLoen() {
+        return hetkelLoen;
     }
 
     public String toString() {

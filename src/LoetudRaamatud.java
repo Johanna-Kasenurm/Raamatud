@@ -3,11 +3,11 @@ import java.util.List;
 
 public class LoetudRaamatud extends Nimekiri{
     public LoetudRaamatud() {
-        List<Raamat> raamatud = new ArrayList<Raamat>();
+        super();
     }
 
-    protected void lisaRaamat(String pealkiri, String autor, int lehekülgi, int loetudLehekülgi, int hinnang) {
-        Raamat uus_raamat = new Raamat(pealkiri, autor, lehekülgi, loetudLehekülgi, hinnang);
+    protected void lisaRaamat(String pealkiri, String autor, int lehekülgi, int hinnang) {
+        Raamat uus_raamat = new Raamat(pealkiri, autor, lehekülgi, lehekülgi, hinnang);
         raamatud.add(uus_raamat);
     }
 

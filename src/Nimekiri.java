@@ -7,7 +7,7 @@ public class Nimekiri {
 
     //Konstruktor
     public Nimekiri() {
-        List<Raamat> raamatud = new ArrayList<Raamat>();
+        this.raamatud = new ArrayList<Raamat>();
     }
 
     protected void lisaRaamat(String pealkiri, String autor, int lehekülgi, int loetudLehekülgi) {

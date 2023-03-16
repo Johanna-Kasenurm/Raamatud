@@ -3,7 +3,7 @@ import java.util.List;
 
 public class TahanLugeda extends Nimekiri{
     public TahanLugeda() {
-        List<Raamat> raamatud = new ArrayList<Raamat>();
+        super();
     }
 
     protected void lisaRaamat(String pealkiri, String autor, int lehekülgi) {

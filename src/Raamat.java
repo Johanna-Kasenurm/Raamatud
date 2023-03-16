@@ -34,8 +34,8 @@ public class Raamat implements Comparable<Raamat> {
      */
 
     public String toString() {
-        return "Pealiri: " + pealkiri + "\nAutor: " + autor + "\nLehekülgi: " + lehekülgi +
-                "\nLoetud lehekülgi: " + loetudLehekülgi + (hinnang == -1 ? "Hinnang puudub" : hinnang);
+        return "Pealkiri: " + pealkiri + "\nAutor: " + autor + "\nLehekülgi: " + lehekülgi +
+                "\nLoetud lehekülgi: " + loetudLehekülgi + "\n" + (hinnang == -1 ? "Hinnang puudub" : "Hinnang: " + hinnang);
     }
 
     public String getPealkiri() {
