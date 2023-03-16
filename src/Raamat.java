@@ -5,6 +5,7 @@ public class Raamat implements Comparable<Raamat> {
     private int loetudLehekülgi;
     private int hinnang = -1;
 
+    //Konstruktor veel lugemata raamatute jaoks
     public Raamat(String pealkiri, String autor, int lehekülgi, int loetudLehekülgi) {
         this.pealkiri = pealkiri;
         this.autor = autor;
@@ -12,6 +13,7 @@ public class Raamat implements Comparable<Raamat> {
         this.loetudLehekülgi = loetudLehekülgi;
     }
 
+    //Konstruktor loetud raamatute jaoks
     public Raamat(String pealkiri, String autor, int lehekülgi, int loetudLehekülgi, int hinnang) {
         this.pealkiri = pealkiri;
         this.autor = autor;

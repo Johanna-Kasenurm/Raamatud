@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,12 @@ public class Lugeja {
 
     public void lugesinLõpuni(Raamat raamat){
         hetkelLoen.eemaldaRaamat(raamat);
+        String hinnang = "-1";
+        //Küsib kasutajalt hinnangut seni kuni kasutaja sisestab täisarvu vahemikus 1-5
+        while (Integer.parseInt(hinnang) < 0 || Integer.parseInt(hinnang) > 5)
+            hinnang = JOptionPane.showInputDialog(null, "Sisestage hinnang loetud raamatule (1-5) ", "Andmete sisestamine",
+                JOptionPane.QUESTION_MESSAGE);
+        raamat.setHinnang(Integer.parseInt(hinnang));
         loetudRaamatud.lisaRaamat(raamat);
     }
 
