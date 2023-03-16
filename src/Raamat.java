@@ -26,9 +26,10 @@ public class Raamat implements Comparable<Raamat> {
         return 0;
     }
 
-    public void lugesinLehekülgi(int lehekülgiJuurde) {
+    /*public void lugesinLehekülgi(int lehekülgiJuurde) {
         loetudLehekülgi += lehekülgiJuurde;
     }
+     */
 
     public String getPealkiri() {
         return pealkiri;
@@ -44,5 +45,17 @@ public class Raamat implements Comparable<Raamat> {
 
     public int getLoetudLehekülgi() {
         return loetudLehekülgi;
+    }
+
+    public int getHinnang() {
+        return hinnang;
+    }
+
+    public void setHinnang(int hinnang) {
+        this.hinnang = hinnang;
+    }
+
+    public void setLoetudLehekülgi(int loetudLehekülgi) {
+        this.loetudLehekülgi = loetudLehekülgi;
     }
 }
